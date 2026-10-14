@@ -33,6 +33,8 @@ public interface ConfigurationDomainService {
 
     boolean isRescheduleRepaymentsOnHolidaysEnabled();
 
+    boolean isRepaymentStepsInWorkingDaysEnabled();
+
     boolean allowTransactionsOnHolidayEnabled();
 
     boolean allowTransactionsOnNonWorkingDayEnabled();
