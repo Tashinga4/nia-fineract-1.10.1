@@ -51,4 +51,4 @@ See [release-notes.md](release-notes.md) and the "Deployment" section of [PULL_R
 
 ## Other Fineract versions
 
-The live server runs an older Fineract version. A port of this fix to **Fineract 1.9.0** is being built and tested separately and will be published as its own repository.
+The live server runs **Fineract 1.9.0**. The same fix for 1.9.0, tested there too, is in [nia-fineract-1.9.0](https://github.com/Tashinga4/nia-fineract-1.9.0) (pull request #1). On 1.9.0 it also needs the Apache fix FINERACT-1971, which 1.10.1 already contains.
