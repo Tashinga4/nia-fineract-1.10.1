@@ -1,0 +1,65 @@
+       removed run-1 holiday Test holiday Thu 22 Oct
+[PASS] 2W5B disbursed Mon 05 Oct: 10 repayments, application = disbursed, alternating pair
+       Thu 08/10 Mon 12/10 Thu 15/10 Mon 19/10 Thu 22/10 Mon 26/10 Thu 29/10 Mon 02/11 Thu 05/11 Mon 09/11
+[PASS] 2W5B disbursed Tue 06 Oct: 10 repayments, application = disbursed, alternating pair
+       Fri 09/10 Tue 13/10 Fri 16/10 Tue 20/10 Fri 23/10 Tue 27/10 Fri 30/10 Tue 03/11 Fri 06/11 Tue 10/11
+[PASS] 2W5B disbursed Wed 07 Oct: 10 repayments, application = disbursed, alternating pair
+       Sat 10/10 Wed 14/10 Sat 17/10 Wed 21/10 Sat 24/10 Wed 28/10 Sat 31/10 Wed 04/11 Sat 07/11 Wed 11/11
+[PASS] 2W5B disbursed Thu 08 Oct: 10 repayments, application = disbursed, alternating pair
+       Mon 12/10 Thu 15/10 Mon 19/10 Thu 22/10 Mon 26/10 Thu 29/10 Mon 02/11 Thu 05/11 Mon 09/11 Thu 12/11
+[PASS] 2W5B disbursed Fri 09 Oct: 10 repayments, application = disbursed, alternating pair
+       Tue 13/10 Fri 16/10 Tue 20/10 Fri 23/10 Tue 27/10 Fri 30/10 Tue 03/11 Fri 06/11 Tue 10/11 Fri 13/11
+[PASS] 2W5B disbursed Sat 10 Oct: 10 repayments, application = disbursed, alternating pair
+       Wed 14/10 Sat 17/10 Wed 21/10 Sat 24/10 Wed 28/10 Sat 31/10 Wed 04/11 Sat 07/11 Wed 11/11 Sat 14/11
+[PASS] 2HB4 (down payment) disbursed Thu 08 Oct: regular repayments Mon/Thu
+       Mon 12/10 Thu 15/10 Mon 19/10 Thu 22/10 Mon 26/10 Thu 29/10
+[PASS] G4WB (7-day minimum) disbursed Wed 07 Oct: first repayment Wed 14 Oct, then Sat/Wed
+       Wed 14/10 Sat 17/10 Wed 21/10 Sat 24/10 Wed 28/10 Sat 31/10 Wed 04/11 Sat 07/11
+[PASS] 2W5B expected Thu 08 Oct, disbursed Fri 09 Oct: regenerated as Tue/Fri
+       Tue 13/10 Fri 16/10 Tue 20/10 Fri 23/10 Tue 27/10 Fri 30/10 Tue 03/11 Fri 06/11 Tue 10/11 Fri 13/11
+[PASS] Repayment on Thu 08 Oct leaves every due date unchanged
+       Thu 08/10 Mon 12/10 Thu 15/10 Mon 19/10 Thu 22/10 Mon 26/10 Thu 29/10 Mon 02/11 Thu 05/11 Mon 09/11
+[PASS] Setting OFF: stock behaviour, dates cycle through the week
+       Thu 15/10 Mon 19/10 Wed 21/10 Sat 24/10 Tue 27/10 Fri 30/10 Mon 02/11 Thu 05/11 Mon 09/11 Wed 11/11
+[PASS] Setting ON: Mon/Thu pairs
+       Thu 15/10 Mon 19/10 Thu 22/10 Mon 26/10 Thu 29/10 Mon 02/11 Thu 05/11 Mon 09/11 Thu 12/11 Mon 16/11
+Traceback (most recent call last):
+  File "/tmp/claude-1000/-home-nias-it-administrator-fineract-1-10-1/8213308b-5c8a-44f2-9014-c69dcf9667ba/scratchpad/e2e.py", line 19, in call
+    with urllib.request.urlopen(req, context=CTX, timeout=120) as r:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 493, in open
+    response = meth(req, response)
+  File "/usr/lib/python3.14/urllib/request.py", line 602, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "/usr/lib/python3.14/urllib/request.py", line 531, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.14/urllib/request.py", line 611, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/claude-1000/-home-nias-it-administrator-fineract-1-10-1/8213308b-5c8a-44f2-9014-c69dcf9667ba/scratchpad/e2e2.py", line 106, in <module>
+    main()
+    ~~~~^^
+  File "/tmp/claude-1000/-home-nias-it-administrator-fineract-1-10-1/8213308b-5c8a-44f2-9014-c69dcf9667ba/scratchpad/e2e2.py", line 79, in main
+    holiday("Test holiday Thu 22 Oct", d("2026-10-22"))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/claude-1000/-home-nias-it-administrator-fineract-1-10-1/8213308b-5c8a-44f2-9014-c69dcf9667ba/scratchpad/e2e2.py", line 23, in holiday
+    hid = call("POST", "holidays", {"name": name, "description": "twice-weekly e2e", "fromDate": fmt(day), "toDate": fmt(day),
+          ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                    "reschedulingType": 1, "offices": [{"officeId": o["id"]} for o in call("GET", "offices")],
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                    "dateFormat": "dd MMMM yyyy", "locale": "en"})["resourceId"]
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/claude-1000/-home-nias-it-administrator-fineract-1-10-1/8213308b-5c8a-44f2-9014-c69dcf9667ba/scratchpad/e2e.py", line 27, in call
+    raise RuntimeError(f"{method} {path} -> HTTP {e.code}: {msgs}")
+RuntimeError: POST holidays -> HTTP 403: ['Holiday with name `Test holiday Thu 22 Oct` already exists']
